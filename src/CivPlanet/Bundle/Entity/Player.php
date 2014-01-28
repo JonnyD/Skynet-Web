@@ -41,24 +41,6 @@ class Player
     private $timestamp;
 
     /**
-     * @ORM\Column(type="datetime", name="last_login")
-     *
-     * @Expose
-     * @Groups({"list", "online"})
-     * @SerializedName("last_login")
-     */
-    private $lastLogin;
-
-    /**
-     * @ORM\Column(type="datetime", name="last_logout")
-     *
-     * @Expose
-     * @Groups({"list", "online"})
-     * @SerializedName("last_logout")
-     */
-    private $lastLogout;
-
-    /**
      * @ORM\OneToMany(targetEntity="Event", mappedBy="player", cascade="persist")
      */
     private $events;
@@ -130,52 +112,6 @@ class Player
     public function getTimestamp()
     {
         return $this->timestamp;
-    }
-
-    /**
-     * Set lastLogin
-     *
-     * @param \DateTime $lastLogin
-     * @return Player
-     */
-    public function setLastLogin($lastLogin)
-    {
-        $this->lastLogin = $lastLogin;
-
-        return $this;
-    }
-
-    /**
-     * Get lastLogin
-     *
-     * @return \DateTime
-     */
-    public function getLastLogin()
-    {
-        return $this->lastLogin;
-    }
-
-    /**
-     * Set lastLogout
-     *
-     * @param \DateTime $lastLogout
-     * @return Player
-     */
-    public function setLastLogout($lastLogout)
-    {
-        $this->lastLogout = $lastLogout;
-
-        return $this;
-    }
-
-    /**
-     * Get lastLogout
-     *
-     * @return \DateTime
-     */
-    public function getLastLogout()
-    {
-        return $this->lastLogout;
     }
 
     /**
