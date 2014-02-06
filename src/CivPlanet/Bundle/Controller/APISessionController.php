@@ -20,6 +20,8 @@ class APISessionController extends Controller
 
     /**
      * @QueryParam(name="username", nullable=true)
+     * @QueryParam(name="login", nullable=true)
+     * @QueryParam(name="logout", nullable=true)
      */
     public function getSessionsAction(ParamFetcher $paramFetcher)
     {
@@ -28,6 +30,10 @@ class APISessionController extends Controller
             if (isset($criterionValue) && $criterionValue != null) {
                 if ($criterionName === 'username') {
                     $params['username'] = $criterionValue;
+                } else if ($criterionName === 'login') {
+                    $params['login'] = $criterionValue;
+                } else if ($criterionName === 'logout') {
+                    $params['logout'] = $criterionValue;
                 }
             }
         }

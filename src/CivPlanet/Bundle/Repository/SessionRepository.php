@@ -30,6 +30,16 @@ class SessionRepository extends EntityRepository
                 ->setParameter('username', $params['username']);
         }
 
+        if (isset($params['login'])) {
+            $qb->andWhere('s.loginEvent = :login')
+                ->setParameter('login', $params['login']);
+        }
+
+        if (isset($params['logout'])) {
+            $qb->andWhere('s.logoutEvent = :logout')
+                ->setParameter('logout', $params['logout']);
+        }
+
         return $query->getQuery()->getResult();
     }
 }
