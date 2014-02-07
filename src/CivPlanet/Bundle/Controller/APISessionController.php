@@ -34,6 +34,12 @@ class APISessionController extends Controller
                     $params['login'] = $criterionValue;
                 } else if ($criterionName === 'logout') {
                     $params['logout'] = $criterionValue;
+                } else if ($criterionName === 'at') {
+                    $params['at'] = $criterionValue;
+                } else if ($criterionName === 'from') {
+                    $params['from'] = $criterionValue;
+                } else if ($criterionName === 'to') {
+                    $params['to'] = $criterionValue;
                 }
             }
         }
