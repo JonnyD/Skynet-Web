@@ -1,0 +1,11 @@
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
+body {
+    padding-top: 60px;
+}
+
+h1, h2, h3, h4 { font-weight: bold; }
